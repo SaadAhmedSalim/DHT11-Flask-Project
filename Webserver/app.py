@@ -24,15 +24,15 @@ api = Api(app)
 
 
 def index():
+    
     local = tzlocal()
     now = datetime.now()
     now = now.replace(tzinfo = local)
     timeString = now.strftime("%Y-%m-%d   %H:%M")
-    templateData = {'title':'Home Page','time':timeString}
-    #return render_template('index.html', **templateData)
-
     temperature, humidity = sensor_DHT11()
-    return render_template("sensor.html",temperature=temperature, humidity=humidity)
+    templateData = {'title':'Home Page','time':timeString,'temperature':temperature, 'humidity':humidity}
+    return render_template('sensor.html', **templateData)
+
 
 def sensor_DHT11():
     while True:
