@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid">
+ <h1>Raspberry Pi-4B</h1>
+	<h3>DHT11 Module</h3>
+	<p>Result will be shown here</p>
+  <div class="container">
+    <h1 class="display-4">Sensor Data Live </h1>
+    <br>
+    <br>
+    <h3 class="Tem">Temperature <strong> {{temperature}} </strong> C </h3>
+    <h3 class="Hum">Humidity <strong> {{humidity}} </strong> % </h3>
+    <br>
+    <br>
+  </div>
+	<footer>Current Server date & time is: {{ time }}</footer>
+</div>
+
+{%  endblock  %}
